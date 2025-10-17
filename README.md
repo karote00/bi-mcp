@@ -24,14 +24,46 @@ Unlike traditional BI tools that fill you with false hope about "actionable insi
 - **Mood Visualization**: ASCII charts that make your despair aesthetically pleasing
 - **Hope Recharge**: Attempts to restore optimism (spoiler: it always fails)
 
-## 🚀 Quick Start
+## 🚀 Installation & Usage
 
+### Option 1: NPM Package (Recommended)
 ```bash
-# Install dependencies (prepare for disappointment)
+# Install globally (embrace the inevitable)
+npm install -g @karote00/bi-mcp
+
+# Or use with uvx (if you have uv installed)
+uvx @karote00/bi-mcp
+```
+
+### Option 2: From Source
+```bash
+# Clone the repository (prepare for disappointment)
+git clone https://github.com/karote00/bi-mcp.git
+cd bi-mcp
+
+# Install dependencies
 npm install
 
-# Start the server (embrace the inevitable)
+# Start the server
 npm start
+```
+
+### Option 3: MCP Configuration
+Add to your MCP configuration file:
+
+```json
+{
+  "mcpServers": {
+    "bi-mcp": {
+      "command": "uvx",
+      "args": ["@karote00/bi-mcp@latest"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR"
+      }
+    }
+  }
+}
+```
 
 # Or run in development mode (watch your hopes crumble in real-time)
 npm run dev

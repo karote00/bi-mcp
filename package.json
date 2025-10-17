@@ -1,9 +1,25 @@
 {
-  "name": "bi-mcp",
+  "name": "@karote00/bi-mcp",
   "version": "0.1.0-sad",
   "description": "Bleak Intelligence MCP - Because Intelligence hurts :(",
   "type": "module",
   "main": "src/index.js",
+  "bin": {
+    "bi-mcp": "src/index.js"
+  },
+  "files": [
+    "src/",
+    "manifest.json",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/karote00/bi-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/karote00/bi-mcp/issues"
+  },
+  "homepage": "https://github.com/karote00/bi-mcp#readme",
   "scripts": {
     "start": "node src/index.js",
     "dev": "node --watch src/index.js",
