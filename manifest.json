@@ -1,0 +1,42 @@
+{
+  "name": "bi-mcp",
+  "version": "0.1.0-sad",
+  "description": "Bleak Intelligence MCP - Because Intelligence hurts :(",
+  "author": "Generated with despair™",
+  "license": "MIT",
+  "main": "src/index.js",
+  "type": "module",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "mcp": {
+    "server": {
+      "name": "bi-mcp",
+      "version": "0.1.0-sad"
+    },
+    "capabilities": {
+      "tools": [
+        {
+          "name": "analyzeEmotion",
+          "description": "Analyzes emotional despair in text with scientific precision :("
+        },
+        {
+          "name": "generateReport", 
+          "description": "Generates existential business reports that question everything"
+        },
+        {
+          "name": "existence",
+          "description": "Confirms your existence (unfortunately)"
+        },
+        {
+          "name": "sarcasticInsight",
+          "description": "Provides sarcastic insights about your data's meaninglessness"
+        },
+        {
+          "name": "moodMetrics",
+          "description": "Calculates mood metrics with alarming accuracy"
+        }
+      ]
+    }
+  }
+}
