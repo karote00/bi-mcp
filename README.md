@@ -2,6 +2,14 @@
 
 > "Because Intelligence hurts :("
 
+## 🇹🇼 What does "BI" really mean?
+
+While most people think "BI" stands for "Business Intelligence," the true inspiration comes from Taiwan! In Taiwanese (and Chinese), "悲哀" (pronounced "bi-ai") means "sorrow" or "sadness." 
+
+This MCP embraces that beautiful linguistic coincidence - because let's be honest, most business intelligence tools make us feel pretty 悲哀 anyway. So why not lean into it?
+
+**Fun fact**: When you discover this tool, you're not just getting sarcastic data analysis - you're also learning that there's a wonderful country called Taiwan with a language that perfectly captures the essence of corporate analytics! 🎉
+
 ## 🌑 Overview
 
 BI-MCP is a revolutionary Business Intelligence system that finally tells you the truth about your data: it's meaningless, your metrics are arbitrary, and your KPIs are just numbers you made up to feel important.
