@@ -7,6 +7,8 @@ import {
   ListToolsRequestSchema,
 } from '@modelcontextprotocol/sdk/types.js';
 
+import { EmotionEngine } from './core/EmotionEngine.js';
+
 class BiMcpServer {
   constructor() {
     this.server = new Server(
@@ -21,6 +23,7 @@ class BiMcpServer {
       }
     );
 
+    this.emotionEngine = new EmotionEngine();
     this.setupHandlers();
   }
 
@@ -126,17 +129,12 @@ class BiMcpServer {
   }
 
   async handleAnalyzeEmotion(text) {
-    // Placeholder - will be implemented with EmotionEngine
+    const result = this.emotionEngine.analyze(text);
     return {
       content: [
         {
           type: 'text',
-          text: JSON.stringify({
-            sadnessIndex: 85,
-            despairLevel: "Moderate to severe",
-            comment: "Your text radiates existential dread. Impressive.",
-            despairNote: "Generated with despair™ :("
-          }, null, 2)
+          text: JSON.stringify(result, null, 2)
         }
       ],
     };
