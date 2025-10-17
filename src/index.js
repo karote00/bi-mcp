@@ -9,6 +9,7 @@ import {
 
 import { EmotionEngine } from './core/EmotionEngine.js';
 import { SarcasticQueryParser } from './core/SarcasticQueryParser.js';
+import { ExistentialReportGen } from './core/ExistentialReportGen.js';
 
 class BiMcpServer {
   constructor() {
@@ -26,6 +27,7 @@ class BiMcpServer {
 
     this.emotionEngine = new EmotionEngine();
     this.sarcasticParser = new SarcasticQueryParser();
+    this.reportGen = new ExistentialReportGen();
     this.setupHandlers();
   }
 
@@ -143,18 +145,12 @@ class BiMcpServer {
   }
 
   async handleGenerateReport(period) {
-    // Placeholder - will be implemented with ExistentialReportGen
+    const report = this.reportGen.generate(period);
     return {
       content: [
         {
           type: 'text',
-          text: JSON.stringify({
-            period: period,
-            averageSadness: 78,
-            peakSadness: "Monday 09:30",
-            comment: "Existence continues. Barely.",
-            despairNote: "Generated with despair™ :("
-          }, null, 2)
+          text: JSON.stringify(report, null, 2)
         }
       ],
     };
