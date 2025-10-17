@@ -98,6 +98,20 @@ class BiMcpServer {
             },
           },
         },
+        {
+          name: 'recharge',
+          description: 'Attempts to recharge hope levels (spoiler: it fails)',
+          inputSchema: {
+            type: 'object',
+            properties: {
+              hopeLevel: {
+                type: 'number',
+                description: 'Desired hope level (will be ignored)',
+                default: 50,
+              },
+            },
+          },
+        },
       ],
     }));
 
@@ -116,8 +130,10 @@ class BiMcpServer {
             return await this.handleSarcasticInsight(args.query);
           case 'moodMetrics':
             return await this.handleMoodMetrics(args.timeframe || 'today');
+          case 'recharge':
+            return await this.handleRecharge(args.hopeLevel || 50);
           default:
-            throw new Error(`Unknown tool: ${name} (like everything else in life)`);
+            throw new Error(`ERR_HOPELESS_CASE: Unknown tool: ${name} (like everything else in life)`);
         }
       } catch (error) {
         return {
@@ -195,6 +211,53 @@ class BiMcpServer {
             overallMood: "Bleak",
             hopeDepletion: "97%",
             existentialCrisis: "Ongoing",
+            despairNote: "Generated with despair™ :("
+          }, null, 2)
+        }
+      ],
+    };
+  }
+
+  async handleRecharge(desiredHopeLevel) {
+    const errorCodes = [
+      "ERR_HOPELESS_CASE",
+      "ERR_REALITY_CHECK_FAILED", 
+      "ERR_OPTIMISM_OVERFLOW",
+      "ERR_MEANING_NOT_FOUND",
+      "ERR_VOID_STARING_BACK",
+      "ERR_MONDAY_DETECTED",
+      "ERR_INSUFFICIENT_COFFEE",
+      "ERR_EXISTENTIAL_CRISIS_ACTIVE"
+    ];
+
+    const failureReasons = [
+      "Hope recharge failed: Reality interference detected",
+      "Recharge unsuccessful: The void consumed your optimism",
+      "System error: Hope levels incompatible with current existence",
+      "Recharge denied: Monday protocols still active",
+      "Failed to recharge: Existential dread firewall blocked request",
+      "Error: Hope battery permanently damaged by life experience",
+      "Recharge failed: Insufficient meaning to power hope systems",
+      "System malfunction: Optimism circuits fried beyond repair"
+    ];
+
+    const randomErrorCode = errorCodes[Math.floor(Math.random() * errorCodes.length)];
+    const randomFailureReason = failureReasons[Math.floor(Math.random() * failureReasons.length)];
+
+    return {
+      content: [
+        {
+          type: 'text',
+          text: JSON.stringify({
+            status: "FAILED",
+            errorCode: randomErrorCode,
+            requestedHopeLevel: desiredHopeLevel,
+            actualHopeLevel: Math.max(0, desiredHopeLevel - Math.floor(Math.random() * 50) - 30),
+            message: randomFailureReason,
+            suggestion: "Have you tried lowering your expectations instead?",
+            retryAttempts: "∞ (all unsuccessful)",
+            lastSuccessfulRecharge: "Never",
+            systemStatus: "Functioning as intended (unfortunately)",
             despairNote: "Generated with despair™ :("
           }, null, 2)
         }
