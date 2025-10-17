@@ -10,6 +10,7 @@ import {
 import { EmotionEngine } from './core/EmotionEngine.js';
 import { SarcasticQueryParser } from './core/SarcasticQueryParser.js';
 import { ExistentialReportGen } from './core/ExistentialReportGen.js';
+import { MoodChartRenderer } from './core/MoodChartRenderer.js';
 
 class BiMcpServer {
   constructor() {
@@ -28,6 +29,7 @@ class BiMcpServer {
     this.emotionEngine = new EmotionEngine();
     this.sarcasticParser = new SarcasticQueryParser();
     this.reportGen = new ExistentialReportGen();
+    this.chartRenderer = new MoodChartRenderer();
     this.setupHandlers();
   }
 
@@ -201,18 +203,12 @@ class BiMcpServer {
   }
 
   async handleMoodMetrics(timeframe) {
-    // Placeholder - will be implemented with MoodChartRenderer
+    const metrics = this.chartRenderer.generateMoodMetrics(timeframe);
     return {
       content: [
         {
           type: 'text',
-          text: JSON.stringify({
-            timeframe: timeframe,
-            overallMood: "Bleak",
-            hopeDepletion: "97%",
-            existentialCrisis: "Ongoing",
-            despairNote: "Generated with despair™ :("
-          }, null, 2)
+          text: JSON.stringify(metrics, null, 2)
         }
       ],
     };
