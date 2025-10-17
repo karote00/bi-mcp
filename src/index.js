@@ -8,6 +8,7 @@ import {
 } from '@modelcontextprotocol/sdk/types.js';
 
 import { EmotionEngine } from './core/EmotionEngine.js';
+import { SarcasticQueryParser } from './core/SarcasticQueryParser.js';
 
 class BiMcpServer {
   constructor() {
@@ -24,6 +25,7 @@ class BiMcpServer {
     );
 
     this.emotionEngine = new EmotionEngine();
+    this.sarcasticParser = new SarcasticQueryParser();
     this.setupHandlers();
   }
 
@@ -175,17 +177,12 @@ class BiMcpServer {
   }
 
   async handleSarcasticInsight(query) {
-    // Placeholder - will be implemented with SarcasticQueryParser
+    const insight = this.sarcasticParser.parse(query);
     return {
       content: [
         {
           type: 'text',
-          text: JSON.stringify({
-            query: query,
-            insight: "Oh, how original. Another query seeking meaning in the void.",
-            sarcasmLevel: "Maximum",
-            despairNote: "Generated with despair™ :("
-          }, null, 2)
+          text: JSON.stringify(insight, null, 2)
         }
       ],
     };
