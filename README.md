@@ -4,7 +4,7 @@
 
 ## 🇹🇼 What does "BI" really mean?
 
-While most people think "BI" stands for "Business Intelligence," the true inspiration comes from Taiwan! In Taiwanese (and Chinese), "悲哀" (pronounced "bi-ai") means "sorrow" or "sadness." 
+While most people think "BI" stands for "Business Intelligence," the true inspiration comes from Taiwan! In Taiwanese, "悲哀" (pronounced "bi-ai") means "sorrow" or "sadness." 
 
 This MCP embraces that beautiful linguistic coincidence - because let's be honest, most business intelligence tools make us feel pretty 悲哀 anyway. So why not lean into it?
 
