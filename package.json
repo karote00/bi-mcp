@@ -1,0 +1,21 @@
+{
+  "name": "bi-mcp",
+  "version": "0.1.0-sad",
+  "description": "Bleak Intelligence MCP - Because Intelligence hurts :(",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js",
+    "test": "echo 'Testing is futile :(' && exit 1"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^0.5.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0"
+  },
+  "keywords": ["mcp", "business-intelligence", "sarcasm", "despair", "existential"],
+  "author": "Generated with despair™",
+  "license": "MIT"
+}
