@@ -23,15 +23,27 @@
   "scripts": {
     "start": "node src/index.js",
     "dev": "node --watch src/index.js",
+    "server": "node src/server.js",
+    "server:dev": "node --watch src/server.js",
     "test": "echo 'Testing is futile :(' && exit 1"
   },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^0.5.0"
+    "@modelcontextprotocol/sdk": "^0.5.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.2"
   },
   "devDependencies": {
     "@types/node": "^20.0.0"
   },
-  "keywords": ["mcp", "model-context-protocol", "business-intelligence", "sarcasm", "despair", "existential", "taiwan"],
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "business-intelligence",
+    "sarcasm",
+    "despair",
+    "existential",
+    "taiwan"
+  ],
   "author": "Generated with despair™",
   "license": "MIT"
 }
