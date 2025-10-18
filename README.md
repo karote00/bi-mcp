@@ -29,10 +29,10 @@ Unlike traditional BI tools that fill you with false hope about "actionable insi
 ### Option 1: NPM Package (Recommended)
 ```bash
 # Install globally (embrace the inevitable)
-npm install -g @karote00/bi-mcp
+npm install -g bi-mcp
 
 # Or use with uvx (if you have uv installed)
-uvx @karote00/bi-mcp
+uvx bi-mcp
 ```
 
 ### Option 2: From Source
@@ -56,7 +56,7 @@ Add to your MCP configuration file:
   "mcpServers": {
     "bi-mcp": {
       "command": "uvx",
-      "args": ["@karote00/bi-mcp@latest"],
+      "args": ["bi-mcp@latest"],
       "env": {
         "FASTMCP_LOG_LEVEL": "ERROR"
       }
